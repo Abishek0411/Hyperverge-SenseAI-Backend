@@ -12,6 +12,7 @@ from api.routes import (
     code,
     cohort,
     course,
+    integrity,
     org,
     task,
     chat,
@@ -117,6 +118,8 @@ app.include_router(scorecard.router, prefix="/scorecards", tags=["scorecards"])
 app.include_router(code.router, prefix="/code", tags=["code"])
 app.include_router(hva.router, prefix="/hva", tags=["hva"])
 app.include_router(websocket_router, prefix="/ws", tags=["websockets"])
+# New route added for integrity
+app.include_router(integrity.router)
 
 
 @app.get("/health")
